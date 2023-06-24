@@ -4,21 +4,17 @@ import {
   View,
   Image,
   ImageBackground,
-  SafeAreaView,
   ScrollView,
 } from "react-native";
 import {
-  ButtonText,
   LogoText,
-  LoginText,
   LoginText2,
-  InputText,
 } from "../components/Text";
-import { FirstButton } from "../components/Button";
-import { Div } from "../components/Div";
 import { useFonts } from "expo-font";
 import AdvancedCardCarousel from "../components/Carousel";
 import AdvancedCardCarousel1 from "../components/Carousel1";
+
+import navImage from "../assets/nav.png";
 
 const HomePage = ({ navigation }) => {
   let [fontsLoaded] = useFonts({
@@ -31,70 +27,70 @@ const HomePage = ({ navigation }) => {
   });
 
   return (
-    fontsLoaded &&
-    fontsLoaded2 && (
-      <ScrollView contentContainerStyle={styles.container}>
+    fontsLoaded && fontsLoaded2 && (
+      <View style={styles.container}>
         <ImageBackground
           source={require("../assets/bg.png")}
-          style={{ width: "100%", height: "105%" }}
+          style={{ width: "100%", height: "100%" }}
         >
-          <Image
-            source={require("../assets/logo.png")}
-            style={styles.logo}
-            resizeMode="contain"
-          />
-          <Image
-            source={require("../assets/hamburger.png")}
-            style={styles.logomenu}
-            resizeMode="contain"
-          />
-          <Image
-            source={require("../assets/home.png")}
-            style={styles.bghome}
-            resizeMode="contain"
-          />
-          <Image />
+          <ScrollView>
+            <Image
+              source={require("../assets/logo.png")}
+              style={styles.logo}
+              resizeMode="contain"
+            />
+            <Image
+              source={require("../assets/hamburger.png")}
+              style={styles.logomenu}
+              resizeMode="contain"
+            />
+            <Image
+              source={require("../assets/home.png")}
+              style={styles.bghome}
+              resizeMode="contain"
+            />
 
-          <LogoText style={styles.logoText}>NUOVI ARRIVI</LogoText>
-          <LoginText2 style={styles.loginText2}>Guarda Tutto</LoginText2>
+            <LogoText style={styles.logoText}>NUOVI ARRIVI</LogoText>
+            <LoginText2 style={styles.loginText2}>Guarda Tutto</LoginText2>
 
-          <AdvancedCardCarousel />
-          <LogoText style={styles.logoText3}>BEST SELLERS</LogoText>
-          <LoginText2 style={styles.loginText2}>Guarda Tutto</LoginText2>
-          <AdvancedCardCarousel1 />
+            <AdvancedCardCarousel />
+            <LogoText style={styles.logoText3}>BEST SELLERS</LogoText>
+            <LoginText2 style={styles.loginText2}>Guarda Tutto</LoginText2>
+            <AdvancedCardCarousel1 />
+            <Image
+              source={require("../assets/non.png")}
+              style={styles.non}
+              resizeMode="contain"
+            />
+            <Image
+              source={require("../assets/pillole.png")}
+              style={styles.pillole}
+              resizeMode="contain"
+            />
+            <Image
+              source={require("../assets/blog.png")}
+              style={styles.blog}
+              resizeMode="contain"
+            />
+            <Image
+              source={require("../assets/cerca.png")}
+              style={styles.cerca}
+              resizeMode="contain"
+            />
+            <Image
+              source={require("../assets/follow.png")}
+              style={styles.follow}
+              resizeMode="contain"
+            />
+          </ScrollView>
+
           <Image
-          source={require("../assets/non.png")}
-          style={styles.non}
-          resizeMode="contain"
-        />
-        <Image />
-        <Image
-          source={require("../assets/pillole.png")}
-          style={styles.pillole}
-          resizeMode="contain"
-        />
-        <Image />
-        <Image
-          source={require("../assets/blog.png")}
-          style={styles.blog}
-          resizeMode="contain"
-        />
-        <Image />
-        <Image
-          source={require("../assets/cerca.png")}
-          style={styles.cerca}
-          resizeMode="contain"
-        />
-        <Image />
-        <Image
-          source={require("../assets/follow.png")}
-          style={styles.follow}
-          resizeMode="contain"
-        />
-        <Image />
+            source={navImage}
+            style={styles.nav}
+            resizeMode="contain"
+          />
         </ImageBackground>
-
-      </ScrollView>
+      </View>
     )
   );
 };
@@ -122,19 +118,19 @@ const styles = StyleSheet.create({
   blog: {
     bottom: 130,
     width: 350,
-    height: 800,
+    height: 1000,
     alignSelf: "center",
   },
   cerca: {
-    bottom: 450,
+    bottom: 300,
     width: 350,
-    height: 800,
+    height: 300,
     alignSelf: "center",
   },
   follow: {
-    bottom: 700,
+    bottom: 300,
     width: 380,
-    height: 900,
+    height: 800,
     alignSelf: "center",
   },
   logoText: {
@@ -143,7 +139,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
   },
   logoText3: {
-    paddingTop:0,
+    paddingTop: 0,
     textAlign: "center",
     fontSize: 25,
   },
@@ -161,35 +157,19 @@ const styles = StyleSheet.create({
     width: 30,
     height: 50,
   },
-  form: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  iconContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    gap: 40,
-    paddingHorizontal: 40,
-    marginTop: 20,
-  },
-  iconWrapper: {
-    width: 60,
-    height: 60,
-    borderRadius: 8,
-    backgroundColor: "#FDE2D2",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  LoginText: {
-    paddingBottom: 10,
-  },
   loginText2: {
     fontSize: 15,
     textAlign: "center",
     fontWeight: "regular",
     paddingTop: 10,
   },
-
+  nav: {
+    position: "absolute",
+    bottom: -50,
+    width: 800,
+    height: 150,
+    alignSelf: "center",
+  },
 });
 
 export { HomePage };
