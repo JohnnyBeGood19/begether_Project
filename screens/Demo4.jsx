@@ -7,8 +7,9 @@ import { Pallino } from "../components/Checkbox/Checkbox";
 import { useFonts } from "expo-font";
 import { FontAwesome } from "@expo/vector-icons";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import { Pallino3 } from "../components/Checkbox/Checkbox3";
 
-const Demo2 = ({ navigation }) => {
+const Demo4 = ({ navigation }) => {
   let [fontsLoaded] = useFonts({
     HKGroteskBold: require("../assets/font/HKGrotesk-Bold.ttf"),
     HKGroteskRegular: require("../assets/font/HKGrotesk-Regular.ttf"),
@@ -40,11 +41,11 @@ const Demo2 = ({ navigation }) => {
             <LoginText style={styles.loginText}>Puoi scegliere più opzioni:</LoginText>
             </Div>           
             <Div style={styles.pallinoContainer}>
-              <Pallino />
+              <Pallino3 />
             </Div>
           <View style={styles.form}>
             <SafeAreaView>
-              <FirstButton onPress={() => navigation.navigate("Demo3")}>
+              <FirstButton onPress={() => navigation.navigate("Loader2")}>
                 <ButtonText>Procedi</ButtonText>
               </FirstButton>
             </SafeAreaView>
@@ -92,4 +93,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export { Demo2 };
+export { Demo4 };

@@ -1,86 +1,55 @@
-import React from 'react';
-import { StyleSheet, View, Image, ImageBackground, SafeAreaView } from 'react-native';
-import { ButtonText, LogoText, LoginText, LoginText2,InputText } from '../components/Text';
-import { FirstButton } from '../components/Button';
-import { Div } from '../components/Div';
-import { useFonts } from 'expo-font';
-import { FontAwesome } from '@expo/vector-icons';
-import { TouchableOpacity } from 'react-native-gesture-handler';
+import React from "react";
+import { StyleSheet, View, Image, ImageBackground, SafeAreaView } from "react-native";
+import { ButtonText, LogoText, LoginText, LoginText2, InputText } from "../components/Text";
+import { FirstButton } from "../components/Button";
+import { Div } from "../components/Div";
+import { Pallino } from "../components/Checkbox/Checkbox";
+import { useFonts } from "expo-font";
+import { FontAwesome } from "@expo/vector-icons";
+import { TouchableOpacity } from "react-native-gesture-handler";
+import { Pallino2 } from "../components/Checkbox/Checkbox2";
 
-const Home = ({ navigation }) => {
+const Demo3 = ({ navigation }) => {
   let [fontsLoaded] = useFonts({
-    HKGroteskBold: require('../assets/font/HKGrotesk-Bold.ttf'),
-    HKGroteskRegular: require('../assets/font/HKGrotesk-Regular.ttf'),
+    HKGroteskBold: require("../assets/font/HKGrotesk-Bold.ttf"),
+    HKGroteskRegular: require("../assets/font/HKGrotesk-Regular.ttf"),
   });
 
   let [fontsLoaded2] = useFonts({
-    HKGroteskMedium: require('../assets/font/HKGrotesk-Medium.ttf'),
+    HKGroteskMedium: require("../assets/font/HKGrotesk-Medium.ttf"),
   });
 
   return (
     fontsLoaded && fontsLoaded2 && (
       <View style={styles.container}>
         <ImageBackground
-          source={require('../assets/bg.png')}
-          style={{ width: '100%', height: '101%' }}>
+          source={require("../assets/bg.png")}
+          style={{ width: "100%", height: "101%" }}
+        >
           <Image
-            source={require('../assets/logo.png')}
+            source={require("../assets/leonardo.png")}
             style={styles.logo}
             resizeMode="contain"
           />
-          <LogoText style={styles.logoText}>Accedi</LogoText>
+          <LogoText style={styles.logoText}>Benvenuto, Leonardo</LogoText>
           <Div>
-            <LoginText style={styles.LoginText}>Sei già dei nostri?</LoginText>
-            <LoginText style={styles.LoginText}>Inserisci la tua email e la tua password</LoginText>
-          </Div>
+            <LoginText2 style={styles.loginText2}>
+              Parlami un po’ di Te, così da mostrarti{"\n"}
+              i Regali giusti e perfetti!
+    
+            </LoginText2>
+            <LoginText style={styles.loginText}>Puoi scegliere più opzioni:</LoginText>
+            </Div>           
+            <Div style={styles.pallinoContainer}>
+              <Pallino2 />
+            </Div>
           <View style={styles.form}>
             <SafeAreaView>
-              <InputText placeholder="Email" />
-              <InputText secureTextEntry={true} placeholder="Password" />
-              <FirstButton onPress={() => navigation.navigate('Demo')}>
-                <ButtonText>Accedi</ButtonText>
+              <FirstButton onPress={() => navigation.navigate("Demo4")}>
+                <ButtonText>Procedi</ButtonText>
               </FirstButton>
             </SafeAreaView>
           </View>
-          <Div>
-            <LoginText style={styles.LoginText}>Oppure</LoginText>
-            <View style={styles.iconContainer}>
-              <TouchableOpacity
-                style={styles.iconWrapper}
-                onPress={() => navigation.navigate('Demo')}>
-                <FontAwesome
-                  name="google"
-                  size={24}
-                  color="#4285F4"
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.iconWrapper}
-                onPress={() => navigation.navigate('Demo')}>
-                <FontAwesome
-                  name="facebook"
-                  size={24}
-                  color="#1877F2"
-                />
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={styles.iconWrapper}
-                onPress={() => navigation.navigate('Demo')}>
-                <FontAwesome
-                  name="apple"
-                  size={24}
-                  color="#000000"
-                />
-              </TouchableOpacity>
-            </View>
-          </Div>
-          <Div>
-          <LoginText style={styles.LoginText}>Hai <LoginText2 style={styles.LoginText2}>dimenticato</LoginText2> la pasword?</LoginText>
-            <LoginText style={styles.LoginText}>Non sei registrato? <LoginText2 style={styles.LoginText2}>Registrati qui.</LoginText2></LoginText>
-          </Div>
-         
-          
-          
         </ImageBackground>
       </View>
     )
@@ -90,40 +59,38 @@ const Home = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
+    alignItems: "center",
   },
   logoText: {
-    paddingTop: 0,
+    paddingTop: 10,
     marginBottom: 0,
+    
   },
   logo: {
-    alignSelf: 'center',
-    marginTop: 50,
+    alignSelf: "center",
+    marginTop: 100,
     width: 200,
-    height: 100,
+    height: 150,
   },
   form: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
-  iconContainer: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    gap: 40,
-    paddingHorizontal: 40,
-    marginTop: 20,
+  loginText2: {
+    paddingTop:40,
+    lineHeight: 20,
+    textAlign: "center",
   },
-  iconWrapper: {
-    width: 60,
-    height: 60,
-    borderRadius: 8,
-    backgroundColor: '#FDE2D2',
-    justifyContent: 'center',
-    alignItems: 'center',
+  loginText: {
+    marginBottom:120,
+    textDecorationLine: "underline",
   },
-  LoginText: {
-paddingBottom: 10,
+
+  pallinoContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+    paddingBottom: 130,
   },
 });
 
-export { Home };
+export { Demo3 };
