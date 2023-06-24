@@ -11,46 +11,60 @@ import { CarouselText, CarouselDescription } from "./Text";
 
 const OFFSET = 50;
 const ITEM_WIDTH = Dimensions.get("window").width - OFFSET * 2;
-const ITEM_HEIGHT = 420;
+const ITEM_HEIGHT = 500;
 
 const cards = [
   {
     id: 0,
-    title: "Rullino della Memoria",
-    posterUrl: require("../assets/1.webp"),
-    starsUrl: require("../assets/stars/stars.png"),
+    title: "I fogliettini in sbatti",
+    posterUrl: require("../assets/foglietto.png"),
+    starsUrl: require("../assets/stars/stars3.png"),
     description:
-      "Immortala Frammenti dei tuoi ricordi nel rullino della memoria",
-    price: "24.90 €",
+      "Annota tutto nei fogliettini Imbruttiti, appiccicali dove ti pare e non intasare più il calendario dello smartphone!",
+    price: "4.90 €",
+    buttonUrl: require("../assets/button.png"),
   },
   {
     id: 1,
-    title: "Spotify - Portachiave",
-    posterUrl: require("../assets/8.webp"),
-    starsUrl: require("../assets/stars/stars1.png"),
-    description: "Incidete  in un portachiave la vostra canzone.",
-    price: "15.90 €",
+    title: "Toblerone - personalizzato",
+    posterUrl: require("../assets/toblerone.webp"),
+    starsUrl: require("../assets/stars/stars3.png"),
+    description: "Cioccolato: cioccolato al latte con miele e torrone alle mandorle.",
+    price: "6.00 €",
+    buttonUrl: require("../assets/button.png"),
   },
   {
     id: 2,
-    title: "Quadro - Coordinate ",
-    posterUrl: require("../assets/2.jpeg"),
+    title: "Puzzle XL ",
+    posterUrl: require("../assets/puzzle.png"),
     starsUrl: require("../assets/stars/stars2.png"),
-    description: "Il Luogo dove tutto è cominciato.",
-    price: "24.90 €",
+    description: "Il tuo Puzzle dei Ricordi.",
+    price: "54.90 €",
+    buttonUrl: require("../assets/button.png"),
   },
   {
     id: 3,
-    title: "Portachiave - dei ricordi",
-    posterUrl: require("../assets/g1.webp"),
+    title: "Yam Lab GiftCard",
+    posterUrl: require("../assets/shop.png"),
+    starsUrl: require("../assets/stars/stars2.png"),
+    description:
+      "Laboratorio di Tufting.",
+    price: "58.00 €",
+    buttonUrl: require("../assets/button.png"),
+  },
+  {
+    id: 4,
+    title: "Regalo fatto a Mano",
+    posterUrl: require("../assets/pensiero.webp"),
     starsUrl: require("../assets/stars/stars3.png"),
     description:
-      "Rullino portachiave  dei ricordi per lui, per lei, per voi o per tuoi amici.",
-    price: "14.90 €",
+      "A Natale conta il pensiero.",
+    price: "4.90 €",
+    buttonUrl: require("../assets/button.png"),
   },
 ];
 
-export default function AdvancedCardCarousel() {
+export default function AdvancedCardCarousel1() {
   const scrollX = React.useRef(new Animated.Value(0)).current;
 
   return (
@@ -121,6 +135,17 @@ export default function AdvancedCardCarousel() {
 
               <CarouselDescription>{item.description}</CarouselDescription>
               <CarouselDescription>{item.price}</CarouselDescription>
+              <Image
+                source={item.buttonUrl}
+                style={{
+                  width: 300,
+                  height: 50,
+                  alignSelf: "center",
+                  marginTop: 10,
+                  borderRadius: 10,
+                }}
+                resizeMode="center"
+              ></Image>
             </Animated.View>
           );
         })}

@@ -74,7 +74,7 @@ const MainText = styled.Text`
 
 const CarouselText = styled.Text`
   font-size: 18px;
-  color: #1a0047;
+  color: #000000;
   font-weight: bold;
   text-align: center;
   margin-top: 10px;
@@ -83,7 +83,7 @@ const CarouselText = styled.Text`
 
 const CarouselDescription = styled.Text`
   font-size: 18px;
-  color: #1a0047;
+  color: #000000;
   text-align: center;
   margin-top: 10px;
   font-family: "HKGroteskRegular";
