@@ -128,7 +128,7 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   follow: {
-    bottom: 300,
+    bottom: 100,
     width: 380,
     height: 800,
     alignSelf: "center",
